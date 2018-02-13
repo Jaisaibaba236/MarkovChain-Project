@@ -1,7 +1,9 @@
 import sqlite3
+from itertools import chain
 
 class Database():
    def __init__(self):
+      self.dictionary = dict()
       self.conn = sqlite3.connect('/home/jaisaibaba236/Desktop/MarkovChain.db')
       self.cursor = self.conn.cursor()
       self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='markov_analysis'")
@@ -24,14 +26,17 @@ class Database():
                  self.conn.commit()
          else:
               for word in range(len(refined_data)-1):
-                  dictionary[refined_data[word]] = refined_data[word+1]
+                  self.dictionary[refined_data[word]] = refined_data[word+1]
                   word_list = self.cursor.execute("SELECT word FROM markov_analysis").fetchall()
-              for key,value in dictionary.items():
-                  if key not in word_list:
+                  print(list(chain(*word_list)))
+              for key,value in self.dictionary.items():
+                  print(key,value)
+
+                if key not in word_list:
                       self.cursor.execute("INSERT INTO markov_analysis (word,following_word) VALUES ('{0}','{1}');".format(key,value))
-                      self.conn.commit()               
+                      self.conn.commit()             
            
 if __name__ == "__main__":
      database = Database()
-     database.data_processing('HI THIS IS JUST A TESTING STRING')
+     database.data_processing('Lets do it.!')
 
