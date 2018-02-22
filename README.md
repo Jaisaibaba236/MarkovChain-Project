@@ -8,10 +8,10 @@ This idea was given by Prof. M. Majid and overall project has been developed und
 
 Environment:
 
-Operating System: Ubuntu 16.04 LTS
-Interpreter or IDE :  PyCharm or any other interpreter for python 3.x
-Database API: SQLite3
-Framework: Flask (micro-framework)
+- Operating System: Ubuntu 16.04 LTS
+- Interpreter or IDE :  PyCharm or any other interpreter for python 3.x
+- Database API: SQLite3
+- Framework: Flask (micro-framework)
 
 References:
 
