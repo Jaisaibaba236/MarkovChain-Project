@@ -2,6 +2,10 @@ Project Definition:
 
 It is ging to be a decent attempt to implement single order Markov-Analysis by using Python development. This project will process the user-input data 'word by word' and store it in database as 'key-value pair' with additional information called 'frequency of suffix (value) for associated key (prefix)'. Next time when user tries to input the same word (key), this program would predict the next coming word (value) based on frequency of all associated values.
 
+Motivation:
+
+This idea was given by Prof. M. Majid and overall project has been developed under the guidance of Dr. Maen Artimy at Dalhousie University, Canada in February, 2018.
+
 Environment:
 
 Operating System: Ubuntu 16.04 LTS
